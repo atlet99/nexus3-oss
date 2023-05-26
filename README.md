@@ -35,11 +35,11 @@ If you don't know "How to install Docker Engine on CentOS/RHEL/OEL?" you can fol
 ### Running
 Clone project
 ```
-git clone https://this_project
+git clone https://github.com/atlet99/nexus3-oss.git
 ```
 Go to the project folder
 ```
-cd this_project
+cd nexus3-oss
 ```
 Create /data and /data/nexus-data directories
 ```
