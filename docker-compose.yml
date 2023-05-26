@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  nginx-proxy:
+    build: ./nginx
+    ports:
+    - '443:443'
+    - '5000:5000'
+    command: [ nginx, '-g', 'daemon off;']
+  nexus-repository:
+    image: sonatype/nexus3:latest
+    ports:
+    - '8081:8081'
+    volumes:
+      - /data/nexus/nexus-data:/nexus-data:rw
+
+volumes:
+  nexus-data:
