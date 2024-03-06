@@ -1,18 +1,30 @@
-version: '2'
+version: '3'
 
 services:
   nginx-proxy:
     build: ./nginx
     ports:
-    - '443:443'
-    - '5000:5000'
+      - '80:80'
+      - '443:443'
+      - '5001:5000'
     command: [ nginx, '-g', 'daemon off;']
+    networks:
+      - nginx-network
+
+# By default, Nexus 3 uses port 8081, so there's no need to declare this port.
+# The port 5000 will be used for downloading Docker images via HTTP.
+
   nexus-repository:
-    image: sonatype/nexus3:latest
-    ports:
-    - '8081:8081'
+    build: ./nexus3
     volumes:
-      - /data/nexus/nexus-data:/nexus-data:rw
+      - /data/nexus-data:/nexus-data:rw
+    ports:
+      - '5000:5000'
+    networks:
+      - nginx-network
 
 volumes:
   nexus-data:
+
+networks:
+  nginx-network:
