@@ -18,7 +18,10 @@ services:
 # The port 5000 will be used for downloading Docker images via HTTP.
 
   nexus-repository:
-    build: ./nexus3
+    build:
+      context: ./nexus3
+      args:
+        - TIMEZONE=Asia/Tashkent
     volumes:
       - /data/nexus-data:/nexus-data:rw
     ports:
