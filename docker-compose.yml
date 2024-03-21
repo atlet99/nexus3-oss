@@ -2,7 +2,10 @@ version: '3'
 
 services:
   nginx-proxy:
-    build: ./nginx
+    build:
+      context: ./nginx
+      args:
+        - HOSTNAME=example.com
     ports:
       - '80:80'
       - '443:443'

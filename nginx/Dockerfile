@@ -1,6 +1,8 @@
 FROM nginx:alpine3.18
 ## nginx version 1.25.4
 
+ARG HOSTNAME
+
 RUN apk update && \
     apk add --no-cache openssl; \
     rm -rf /var/cache/apk/*

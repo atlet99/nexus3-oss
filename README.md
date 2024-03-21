@@ -49,10 +49,13 @@ Give correct permissions on the directories.
 ```
 sudo chown -R 200 /data/nexus-data
 ```
-
-To run docker-compose 
+Give permission to the run.sh file
 ```
-sudo docker-compose up -d --build
+chmod u+x run.sh
+```
+To run docker-compose via run.sh
+```
+./run.sh
 ``` 
 
 ## Usage <a name = "usage"></a>
