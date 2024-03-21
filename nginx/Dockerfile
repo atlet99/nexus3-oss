@@ -11,6 +11,6 @@ RUN mkdir -p /etc/nginx/external; \
     -out "/etc/nginx/external/cert.pem" \
     -days 1095 -nodes -sha256; \
     openssl -out "/etc/nginx/external/dhparam.pem" 4096 ; \
-    opnssl rand 80 > /etc/nginx/external/ticket.key
+    openssl rand 80 > /etc/nginx/external/ticket.key
 
 COPY nginx.conf /etc/nginx/nginx.conf
