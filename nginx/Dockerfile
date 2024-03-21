@@ -7,7 +7,7 @@ RUN apk update && \
 
 RUN mkdir -p /etc/nginx/external; \
     /usr/bin/openssl req -x509 -newkey rsa:4096 \
-    -subj "/C=KZ/ST=Almaty obl./L=Almaty/O=JSC MSBOOK TEST KZ/CN=nexus-repository" \
+    -subj "/C=KZ/ST=Almaty obl./L=Almaty/O=JSC MSBOOK TEST KZ/CN=${HOSTNAME}" \
     -keyout "/etc/nginx/external/key.pem" \
     -out "/etc/nginx/external/cert.pem" \
     -days 1095 -nodes -sha256; \
