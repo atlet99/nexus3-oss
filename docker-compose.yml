@@ -9,7 +9,7 @@ services:
     ports:
       - '80:80'
       - '443:443'
-      - '5001:5000'
+#      - '5000:5000'
     command: [ nginx, '-g', 'daemon off;']
     networks:
       - nginx-network
@@ -34,3 +34,4 @@ volumes:
 
 networks:
   nginx-network:
+
