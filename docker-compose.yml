@@ -7,7 +7,6 @@ services:
     ports:
       - '80:80'
       - '443:443'
-#      - '5000:5000'
     command: [ nginx, '-g', 'daemon off;']
     networks:
       - nginx-network
@@ -23,7 +22,7 @@ services:
     volumes:
       - /data/nexus-data:/nexus-data:rw
     ports:
-      - '5000:5000'
+      - ':5000'
     networks:
       - nginx-network
 
