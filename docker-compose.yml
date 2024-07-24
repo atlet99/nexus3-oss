@@ -21,8 +21,6 @@ services:
         - TIMEZONE=Asia/Tashkent
     volumes:
       - /data/nexus-data:/nexus-data:rw
-    ports:
-      - ':5000'
     networks:
       - nginx-network
 
